@@ -1,4 +1,29 @@
-n = int(input("enter the number:"))
-for i in range(n):
-    n^2
-    print(i)
+class Bank:
+    bankname = "SBI"
+    ifsc = "SBIN0000123"
+#Constructor
+    def __init__(self, name, bal, mail):
+        self.name=name
+        self.bal=bal
+        self.mail=mail
+#Account Details
+    def show_details(self):
+        print("Bank Name :", Bank.bankname)
+        print("IFSC Code  :", Bank.ifsc)
+        print("Account Holder :", self.name)
+        print("Balance     :", self.bal)
+        print("Email   :", self.mail)
+    # Check Balance
+    def check_bal(self):
+        print("\nAvailable Balance :", self.bal)
+    # Deposit Amount
+    def deposit(self):
+        amount = int(input("\nEnter Deposit Amount: "))
+        self.bal += amount
+        print( amount,"Deposited Successfully.")
+        print("Updated Balance :", self.bal)
+user1 = Bank("Ram", 10000, "ram@example.com")
+user1.show_details()
+user1.check_bal()
+user1.deposit()
+user1.check_bal()
